@@ -9,8 +9,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_docs:
+  build:
     uses: hotosm/gh-workflows/.github/workflows/pnpm_build.yml@2.0.1
     with:
       command: build
       output_path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
