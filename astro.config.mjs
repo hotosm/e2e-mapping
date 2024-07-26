@@ -3,7 +3,9 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://e2e.hotosm.org',
+	// FIXME replace with custom domain and remove base
+	site: 'https://hotosm.github.io',
+	base: 'e2e-mapping',
 	output: "static",
 	server: {
 		host: '0.0.0.0',
