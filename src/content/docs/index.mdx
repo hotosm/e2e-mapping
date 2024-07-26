@@ -1,0 +1,49 @@
+---
+title: End-to-End Mapping
+description: From a blank canvas to usable map data.
+template: splash
+hero:
+  tagline: How to go from a blank canvas to usable map data.
+  image:
+    file: ../../assets/hot_logo.png
+  actions:
+    - text: 1. Images
+      link: /1-imagery/a-drone-tm/
+      icon: right-arrow
+      variant: primary
+    - text: 2. Map
+      link: /2-digitization/a-tm-training/
+      icon: right-arrow
+      variant: primary
+    - text: 3. Tags
+      link: /3-field-map/a-fmtm/
+      icon: right-arrow
+      variant: primary
+    - text: 4. Use
+      link: /4-data/a-extract/
+      icon: right-arrow
+      variant: primary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Requirements
+
+<CardGrid stagger>
+	<Card title="Coordinator" icon="laptop">
+		A project owner / coordinator who can pull all of the pieces together.
+	</Card>
+	<Card title="Drone Operators" icon="rocket">
+		Users in the area of interest with drones, and willing to generate imagery.
+	
+		The drone must be supported by Drone Tasking Manager.
+	</Card>
+	<Card title="Remote Mappers" icon="magnifier">
+		A small team of digitisers, who use TM to generate a traning dataset for AI models.
+	
+		If this includes people with local knowledge, even better!
+	</Card>
+	<Card title="Field Mappers" icon="farcaster">
+		A group of local people who can verify features on the ground, adding tags to them with their local knowledge, via an easy to fill out mobile survey.
+	</Card>
+</CardGrid>
