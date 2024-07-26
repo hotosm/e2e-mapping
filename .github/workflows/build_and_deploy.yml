@@ -1,0 +1,16 @@
+name: 📖 Publish Docs
+
+on:
+  push:
+    paths:
+      - src/**
+    branches: [main]
+  # Allow manual trigger (workflow_dispatch)
+  workflow_dispatch:
+
+jobs:
+  build_docs:
+    uses: hotosm/gh-workflows/.github/workflows/pnpm_build.yml@2.0.1
+    with:
+      command: build
+      output_path: dist
