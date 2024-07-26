@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
@@ -8,6 +8,10 @@ export default defineConfig({
 	server: {
 		host: '0.0.0.0',
 		port: 3000,
+	},
+	// Temp workaround until PNPM bundling `sharp` is fixed
+	image: {
+		service: passthroughImageService(),
 	},
 	integrations: [
 		starlight({
