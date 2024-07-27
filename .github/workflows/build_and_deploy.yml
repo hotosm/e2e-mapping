@@ -10,24 +10,8 @@ on:
 
 jobs:
   build:
-    uses: hotosm/gh-workflows/.github/workflows/pnpm_build.yml@2.0.2
+    uses: hotosm/gh-workflows/.github/workflows/pnpm_build.yml@2.0.3
     with:
       command: build
       output_path: dist
       github_pages: true
-
-  deploy:
-    needs: build
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment origin
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
