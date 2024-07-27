@@ -5,7 +5,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	// FIXME replace with custom domain and remove base
 	site: 'https://hotosm.github.io',
-	base: '/e2e-mapping',
+	base: '/e2e-mapping/',
 	// Do not use server side rendering
 	output: "static",
 	server: {
