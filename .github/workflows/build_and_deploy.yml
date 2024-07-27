@@ -8,12 +8,6 @@ on:
   # Allow manual trigger (workflow_dispatch)
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   build:
     uses: hotosm/gh-workflows/.github/workflows/pnpm_build.yml@2.0.1
@@ -23,11 +17,19 @@ jobs:
 
   deploy:
     needs: build
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment origin
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
