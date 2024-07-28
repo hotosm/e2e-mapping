@@ -1,5 +1,7 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import '@shoelace-style/shoelace/dist/themes/light.css';
+import '@shoelace-style/shoelace/dist/components/button/button.js';
 
 // https://astro.build/config
 export default defineConfig({
@@ -29,6 +31,10 @@ export default defineConfig({
 						{ label: '1a) Drone TM', slug: '1-imagery/a-drone-tm' },
 						{ label: '1b) OpenAerialMap', slug: '1-imagery/b-oam' },
 					],
+					translations: {
+						fr: 'Placeholder',
+						es: 'Placeholder',
+					},
 				},
 				{
 					label: '2. Digitization',
@@ -37,6 +43,10 @@ export default defineConfig({
 						{ label: '2b) fAIr (AI-Assisted Mapping)', slug: '2-digitization/b-fair' },
 						{ label: '2c) Tasking Manager Validation', slug: '2-digitization/c-tm-validation' },
 					],
+					translations: {
+						fr: 'Placeholder',
+						es: 'Placeholder',
+					},
 				},
 				{
 					label: '3. Field Mapping',
@@ -44,6 +54,10 @@ export default defineConfig({
 						{ label: '3a) Field Mapping Tasking Manager', slug: '3-field-map/a-fmtm' },
 						{ label: '3b) Merging Data With OSM', slug: '3-field-map/b-conflation' },
 					],
+					translations: {
+						fr: 'Placeholder',
+						es: 'Placeholder',
+					},
 				},
 				{
 					label: '4. Using Collected Data',
@@ -51,8 +65,27 @@ export default defineConfig({
 						{ label: '4a) Extraction from OpenStreetMap', slug: '4-data/a-extract' },
 						{ label: '4b) Visualization Tools', slug: '4-data/b-visualize' },
 					],
+					translations: {
+						fr: 'Placeholder',
+						es: 'Placeholder',
+					},
 				},
 			],
+			defaultLocale: 'root',
+			locales: {
+				root: {
+					label: 'English',
+					lang: 'en',
+				},
+				fr: {
+					label: 'Français',
+					lang: 'fr',
+				},
+				es: {
+					label: 'Español',
+					lang: 'es',
+				},
+			},
 		}),
 	],
 });
