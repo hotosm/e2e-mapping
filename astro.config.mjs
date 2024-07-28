@@ -26,30 +26,30 @@ export default defineConfig({
 				{
 					label: '1. Base Imagery',
 					items: [
-						{ label: 'a) Drone TM', slug: '1-imagery/a-drone-tm' },
-						{ label: 'b) OpenAerialMap', slug: '1-imagery/b-oam' },
+						{ label: '1a) Drone TM', slug: '1-imagery/a-drone-tm' },
+						{ label: '1b) OpenAerialMap', slug: '1-imagery/b-oam' },
 					],
 				},
 				{
 					label: '2. Digitization',
 					items: [
-						{ label: 'a) Tasking Manager Training', slug: '2-digitization/a-tm-training' },
-						{ label: 'b) fAIr (AI-Assisted Mapping)', slug: '2-digitization/b-fair' },
-						{ label: 'c) Tasking Manager Validation', slug: '2-digitization/c-tm-validation' },
+						{ label: '2a) Tasking Manager Training', slug: '2-digitization/a-tm-training' },
+						{ label: '2b) fAIr (AI-Assisted Mapping)', slug: '2-digitization/b-fair' },
+						{ label: '2c) Tasking Manager Validation', slug: '2-digitization/c-tm-validation' },
 					],
 				},
 				{
 					label: '3. Field Mapping',
 					items: [
-						{ label: 'a) Field Mapping Tasking Manager', slug: '3-field-map/a-fmtm' },
-						{ label: 'b) Merging Data With OSM', slug: '3-field-map/b-conflation' },
+						{ label: '3a) Field Mapping Tasking Manager', slug: '3-field-map/a-fmtm' },
+						{ label: '3b) Merging Data With OSM', slug: '3-field-map/b-conflation' },
 					],
 				},
 				{
 					label: '4. Using Collected Data',
 					items: [
-						{ label: 'a) Extraction from OpenStreetMap', slug: '4-data/a-extract' },
-						{ label: 'b) Visualization Tools', slug: '4-data/b-visualize' },
+						{ label: '4a) Extraction from OpenStreetMap', slug: '4-data/a-extract' },
+						{ label: '4b) Visualization Tools', slug: '4-data/b-visualize' },
 					],
 				},
 			],

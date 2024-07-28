@@ -1,11 +1,10 @@
 ---
-title: Example Guide
-description: A guide in my new Starlight docs site.
+title: Drone Tasking Manager
+description: Collect base imagery.
 ---
 
-Guides lead a user through a specific task they want to accomplish, often with a sequence of steps.
-Writing a good guide requires thinking about what your users are trying to do.
+## Step 1: Create an account
 
-## Further reading
+## Extra Resources
 
-- Read [about how-to guides](https://diataxis.fr/how-to-guides/) in the Diátaxis framework
+- Read more about ground sampling distance [here](https://test.org)

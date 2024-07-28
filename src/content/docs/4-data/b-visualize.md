@@ -1,11 +1,12 @@
 ---
-title: Example Guide
-description: A guide in my new Starlight docs site.
+title: Data Visualization
+description: Visualize your map data.
 ---
 
-Guides lead a user through a specific task they want to accomplish, often with a sequence of steps.
-Writing a good guide requires thinking about what your users are trying to do.
+## QGIS
 
-## Further reading
+## xxx
 
-- Read [about how-to guides](https://diataxis.fr/how-to-guides/) in the Diátaxis framework
+## Extra Resources
+
+- Read more about ground sampling distance [here](https://test.org)
