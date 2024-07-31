@@ -1,4 +1,7 @@
-# Alpa Corral - Fire Prevention
+---
+title: Alpa Corral - Fire Prevention
+description: E2E mapping to assess fire risk in the Alpa Corral community.
+---
 
 ## Imagery Collection
 
