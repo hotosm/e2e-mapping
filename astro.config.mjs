@@ -70,6 +70,25 @@ export default defineConfig({
 						es: 'Placeholder',
 					},
 				},
+				{
+					label: 'Extra Resources',
+					slug: 'resources',
+					translations: {
+						fr: 'Placeholder',
+						es: 'Placeholder',
+					},
+				},
+				{
+					label: 'Case Studies',
+					items: [
+						{ label: '2024-04 Bali', slug: 'case-studies/2024-04-bali' },
+						{ label: '2024-07 Argentina', slug: 'case-studies/2024-07-argentina' },
+					],
+					translations: {
+						fr: 'Placeholder',
+						es: 'Placeholder',
+					},
+				},
 			],
 			defaultLocale: 'root',
 			locales: {
