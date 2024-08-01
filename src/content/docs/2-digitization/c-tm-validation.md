@@ -15,4 +15,11 @@ description: Validate the AI-generated features.
 
 ...
 
+## Step 5: Feedback for fAIr (Optional)
+
+- If the predictions are not good enough, then fAIr can try again using
+  the validation feedback.
+- The corrected features are loaded into fAIr and the model is re-trained.
+- This step could be done multiple times.
+
 ## Extra Resources
