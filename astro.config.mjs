@@ -25,7 +25,7 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: '0. Overview',
-					slug: 'overview',
+					slug: '0-overview',
 					translations: {
 						fr: 'Placeholder',
 						es: 'Placeholder',
