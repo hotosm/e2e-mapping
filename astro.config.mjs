@@ -24,6 +24,14 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
+					label: '0. Overview',
+					slug: 'overview',
+					translations: {
+						fr: 'Placeholder',
+						es: 'Placeholder',
+					},
+				},
+				{
 					label: '1. Base Imagery',
 					items: [
 						{ label: '1a) Drone TM', slug: '1-imagery/a-drone-tm' },
