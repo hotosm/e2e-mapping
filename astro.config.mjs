@@ -45,9 +45,9 @@ export default defineConfig({
 				{
 					label: '2. Digitization',
 					items: [
-						{ label: '2a) Tasking Manager Training', slug: '2-digitization/a-tm-training' },
+						{ label: '2a) Tasking Manager Training', slug: '2-digitization/a-ml-training' },
 						{ label: '2b) fAIr (AI-Assisted Mapping)', slug: '2-digitization/b-fair' },
-						{ label: '2c) Tasking Manager Validation', slug: '2-digitization/c-tm-validation' },
+						{ label: '2c) Tasking Manager Validation', slug: '2-digitization/c-ml-validation' },
 					],
 					translations: {
 						fr: 'Placeholder',

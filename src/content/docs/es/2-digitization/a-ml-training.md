@@ -1,6 +1,6 @@
 ---
-title: Tasking Manager (Validation)
-description: Validate the AI-generated features.
+title: Creating a Training Dataset
+description: Generate a training dataset for fAIr.
 ---
 
 ## Step 1: Create an account

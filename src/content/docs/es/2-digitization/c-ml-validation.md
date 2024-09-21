@@ -1,6 +1,6 @@
 ---
-title: Tasking Manager (Training)
-description: Generate a training dataset for fAIr.
+title: Validating the fAIr Output
+description: Validate the AI-generated features.
 ---
 
 ## Step 1: Create an account

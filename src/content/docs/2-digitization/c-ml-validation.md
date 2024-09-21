@@ -1,5 +1,5 @@
 ---
-title: Tasking Manager (Validation)
+title: Validating the fAIr Output
 description: Validate the AI-generated features.
 ---
 
