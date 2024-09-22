@@ -3,8 +3,7 @@ title: Creating a Training Dataset
 description: Generate a training dataset for fAIr.
 ---
 
-## Summary
-
+:::tip[Summary]
 - We must collaboratively generate a sample (training) dataset for the area,
   around 10-20% of total digitized features.
 - With this training data we can run [fAIr](./b-fair.md) in the next step to
@@ -12,6 +11,7 @@ description: Generate a training dataset for fAIr.
 - We have two options:
   - uMap
   - Modified Tasking Manager
+:::
 
 ## Option 1: UMap
 

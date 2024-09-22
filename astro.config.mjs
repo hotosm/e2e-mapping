@@ -19,6 +19,9 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'End-to-End Mapping',
+			logo: {
+				src: './src/assets/hot-logo-icon.svg',
+			  },
 			social: {
 				github: 'https://github.com/hotosm/e2e-mapping',
 			},
