@@ -13,7 +13,7 @@ description: Collect base imagery.
 - The collected imagery is stitched together into one large image.
 :::
 
-## Step 1: Create an Account
+## Step 1: Sign In
 
 - Visit the [Drone TM](https://dronetm.org) website and create an account:
 - Many login methods are supported, such as OpenStreetMap and Google account.

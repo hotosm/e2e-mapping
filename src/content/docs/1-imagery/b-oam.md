@@ -10,8 +10,21 @@ description: Upload base imagery.
   web applications (as a Tile Map Service (TMS) link).
 :::
 
-## Step 1: Create an account
+## Step 1: Sign In
 
-...
+- Currently this requires a Google account.
+
+## Step 2: Upload Imagery
+
+- Click 'Upload' at the top right.
+- Create an entry for platform 'UAV'.
+- Add the link to the stitched image from Drone TM (S3 bucket link).
+- Click submit to upload.
+
+# Step 3: Get Your TMS URL
+
+- Once the imagery is processed, access the entry on OAM.
+- You should be provided with a TMS URL that you can use in the next
+  tools (Tasking Manager, FMTM).
 
 ## Extra Resources

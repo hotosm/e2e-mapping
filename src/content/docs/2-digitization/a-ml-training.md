@@ -17,7 +17,7 @@ description: Generate a training dataset for fAIr.
 
 - Choose a uMap instance to use [1](https://umap.openstreetmap.fr/en/)
   [2](https://umap.hotosm.org)
-- Create a new project, add the TMS URL from OpenAerialMap (if available).
+- Create a new project, add the TMS URL from the previous step (OpenAerialMap).
 - Send the project link to digitizers.
 - Map collaboratively, with real-time updates.
 - Export the final GeoJSON.
@@ -28,9 +28,8 @@ description: Generate a training dataset for fAIr.
 - The instance of Tasking Manager available at 
   [https://train.hotosm.org](https://train.hotosm.org) is
   not linked to standard OpenStreetMap (OSM), but instead to a 'sandbox' version.
-
-### Step 1: Create an account
-
-...
+- Create a new project, add the TMS URL from the previous step (OpenAerialMap).
+- Map the area collaboratively.
+- Output the data as GeoJSON.
 
 ## Extra Resources
