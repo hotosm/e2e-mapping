@@ -1,0 +1,42 @@
+<script>
+  import '@hotosm/ui/dist/style.css';
+  import { Button } from '@hotosm/ui/dist/hotosm-ui';
+
+  const button = document.getElementById('geojsonProperties');
+  button?.addEventListener('click', async () => {
+    const endpoint = 'https://api.fmtm.hotosm.org/docs#/helper/append_required_geojson_properties_helper_append_geojson_properties_post';
+
+    const geojson = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [125.6, 10.1]
+          }
+        }
+      ]
+    };
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(geojson)
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  });
+</script>
+<hot-button id="geojsonProperties" variant="primary">Append GeoJSON Properties</hot-button>

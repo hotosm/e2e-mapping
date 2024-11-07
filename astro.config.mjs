@@ -1,4 +1,5 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
+import UnoCSS from 'unocss/astro';
 import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
@@ -17,6 +18,7 @@ export default defineConfig({
 		service: passthroughImageService(),
 	},
 	integrations: [
+		UnoCSS(),
 		starlight({
 			title: 'End-to-End Mapping',
 			logo: {
@@ -28,17 +30,9 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: '0. Overview',
-					slug: '0-overview',
-					translations: {
-						fr: 'Placeholder',
-						es: 'Placeholder',
-					},
-				},
-				{
-					label: '1. Base Imagery',
 					items: [
-						{ label: '1a) Drone TM', slug: '1-imagery/a-drone-tm' },
-						{ label: '1b) OpenAerialMap', slug: '1-imagery/b-oam' },
+						{ label: '0a) Intro', slug: '0-overview/a-intro' },
+						{ label: '0b) Preparation', slug: '0-overview/b-preparation' },
 					],
 					translations: {
 						fr: 'Placeholder',

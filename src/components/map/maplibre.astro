@@ -1,0 +1,48 @@
+---
+export interface Props {
+  latitude: number
+  longitude: number
+  zoom: number
+  mapstyle: string
+  container: string
+
+  /** If `false`, the map will not respond to interaction.  This is a static map built with the full web map rendering API. */
+  interactive?: boolean
+  containerstyle?: string
+}
+
+const { latitude, longitude, zoom, mapstyle, container, interactive, containerstyle} = Astro.props
+---
+
+<maplibre-astro
+  data-latitude={latitude}
+  data-longitude={longitude}
+  data-zoom={zoom}
+  data-mapstyle={mapstyle}
+  data-container={container}
+  data-interactive={interactive}
+  data-containerstyle={containerstyle}
+>
+<div id={container} style={containerstyle}></div>
+
+<script>
+  import 'maplibre-gl/dist/maplibre-gl.css';
+  import maplibre from 'maplibre-gl';
+
+  class MapLibreMap extends HTMLElement {
+    constructor() {
+      super()
+
+      console.log(maplibre.Map)
+      const map = new maplibre.Map({
+        container: this.dataset.container,
+        interactive: JSON.parse(this.dataset.interactive),
+        center: [this.dataset.longitude, this.dataset.latitude],
+        zoom: this.dataset.zoom,
+        style: this.dataset.mapstyle
+      })
+    }
+  }
+
+  window.customElements.define("maplibre-astro", MapLibreMap);
+</script>

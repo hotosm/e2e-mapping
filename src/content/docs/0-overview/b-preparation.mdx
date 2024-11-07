@@ -1,0 +1,22 @@
+---
+title: E2E Mapping Preparation
+description: Get started with the E2E mapping workflow.
+---
+
+import Map from '../../../components/map/maplibre.astro';
+
+To create a map, the first thing you need is an area defined to map!
+
+## Select Your Area Of Interest (AOI)
+
+Here we will generate an AOI than you wish to create a map for.
+
+<Map
+  container="maplibremap"
+  latitude="32.795595"
+  longitude="-117.259191"
+  zoom="3"
+  interactive="true"
+  mapstyle="https://demotiles.maplibre.org/style.json"
+  containerstyle="width: 100%; height: 70vh;"
+></Map>
