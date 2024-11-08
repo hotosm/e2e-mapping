@@ -8,7 +8,7 @@ There are many, many, tools we can use for geospatial data
 visualisation.
 :::
 
-Link to various tutorials on 
+Link to various tutorials on
 [https://toolbox.hotosm.org](https://toolbox.hotosm.org)
 
 ## QGIS

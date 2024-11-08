@@ -3,7 +3,7 @@ title: E2E Mapping Overview
 description: An overview of the data flow in e2e mapping.
 ---
 
-This is an overview of the end-to-end workflow that ties together all 
+This is an overview of the end-to-end workflow that ties together all
 of HOT's tools.
 
 The end goal is to enable communities to generate their own maps for their area

@@ -4,14 +4,16 @@ description: Collect base imagery.
 ---
 
 :::tip[Summary]
+
 - We need to collect basemap imagery that we can generate map features from.
 - For example we can trace building footprints very accurately from
   high-resolution drone imagery (much better than satellite).
 - Imagery will be collected collaboratively via Drone Tasking Manager
-  (Drone TM), where an area is subdivided into tasks and users collect imagery 
+  (Drone TM), where an area is subdivided into tasks and users collect imagery
   for each task.
 - The collected imagery is stitched together into one large image.
-:::
+
+  :::
 
 ## Step 1: Sign In
 
@@ -57,16 +59,16 @@ description: Collect base imagery.
 
 1. Download the images from your drone.
 
-:::tip
-This is a good time to do a basic sanity check of your collected
-images.
+   :::tip
+   This is a good time to do a basic sanity check of your collected
+   images.
 
-First process the images with the QGIS plugin
-[ImportPhotos](https://plugins.qgis.org/plugins/ImportPhotos)
+   First process the images with the QGIS plugin
+   [ImportPhotos](https://plugins.qgis.org/plugins/ImportPhotos)
 
-You should be able to see the image locations on a map,
-and view them by hovering your mouse.
-:::
+   You should be able to see the image locations on a map,
+   and view them by hovering your mouse.
+   :::
 
 2. Upload the directory of images to DroneTM.
 
@@ -76,15 +78,17 @@ and view them by hovering your mouse.
    processing in DroneTM, which uses Open Drone Map (ODM) underneath.
 2. Once complete the final stitched image can be downloaded.
 
-:::note
-- From all collected imagery we need to produce what is called an ortho-mosaic.
-- This is simply all collected images merged into a single image, with
-  georeferencing so where know where the image is located on a map.
-- The collected images from Drone TM must be pre-processed using the EXIF
-  information on images (when and where the photo was taken).
-:::
+   :::note
+
+   - From all collected imagery we need to produce what is called an ortho-mosaic.
+   - This is simply all collected images merged into a single image, with
+     georeferencing so where know where the image is located on a map.
+   - The collected images from Drone TM must be pre-processed using the EXIF
+     information on images (when and where the photo was taken).
+
+   :::
 
 ## Extra Resources
 
 - Read more about ground sampling distance
-[here](https://wingtra.com/ground-sample-distance/)
+  [here](https://wingtra.com/ground-sample-distance/)

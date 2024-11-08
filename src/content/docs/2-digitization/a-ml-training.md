@@ -4,6 +4,7 @@ description: Generate a training dataset for fAIr.
 ---
 
 :::tip[Summary]
+
 - We must collaboratively generate a sample (training) dataset for the area,
   around 10-20% of total digitized features.
 - With this training data we can run [fAIr](./b-fair.md) in the next step to
@@ -11,7 +12,7 @@ description: Generate a training dataset for fAIr.
 - We have two options:
   - uMap
   - Modified Tasking Manager
-:::
+    :::
 
 ## Option 1: UMap
 
@@ -25,7 +26,7 @@ description: Generate a training dataset for fAIr.
 ## Option 2: Tasking Manager
 
 - The TMS URL from OAM can be used as a base layer in Tasking Manager.
-- The instance of Tasking Manager available at 
+- The instance of Tasking Manager available at
   [https://train.hotosm.org](https://train.hotosm.org) is
   not linked to standard OpenStreetMap (OSM), but instead to a 'sandbox' version.
 - Create a new project, add the TMS URL from the previous step (OpenAerialMap).

@@ -24,13 +24,14 @@ Draw polygon on the map and it will be downloaded automatically.
   containerstyle="width: 100%; height: 70vh; margin-top: 1.5rem;"
 ></Map>
 
-{/*
-  Comment:
-  This logic could be embedded in maplibre.astro, but instead
-  we want the flexibility to swap out this component with a
-  generic web component. So instead we get the mapContainer
-  div element and then get the draw attribute from it.
-*/}
+{/_
+Comment:
+This logic could be embedded in maplibre.astro, but instead
+we want the flexibility to swap out this component with a
+generic web component. So instead we get the mapContainer
+div element and then get the draw attribute from it.
+_/}
+
 <script>{`
   window.addEventListener('DOMContentLoaded', () => {
       const mapElement = document.querySelector('maplibre-astro');
