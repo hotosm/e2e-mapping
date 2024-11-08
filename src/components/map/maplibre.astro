@@ -3,44 +3,150 @@ export interface Props {
   latitude: number
   longitude: number
   zoom: number
-  mapstyle: string
   container: string
-
-  /** If `false`, the map will not respond to interaction.  This is a static map built with the full web map rendering API. */
-  interactive?: boolean
   containerstyle?: string
+  interactive?: boolean
+  mapstyle?: object
+  geocode?: boolean
+  draw?: boolean
 }
 
-const { latitude, longitude, zoom, mapstyle, container, interactive, containerstyle} = Astro.props
+const {
+  latitude,
+  longitude,
+  zoom,
+  container,
+  containerstyle,
+  interactive = true,
+  // Use OSM as default style, unless specified
+  mapstyle = {
+    id: 'OSM Raster',
+    version: 8,
+    name: 'OpenStreetMap',
+    sources: {
+      osm: {
+        type: 'raster',
+        tiles: [
+          'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        ],
+        minzoom: 0,
+        maxzoom: 19,
+        attribution: '© <a target="_blank" rel="noopener" href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+      },
+    },
+    layers: [
+      {
+        id: 'osm',
+        type: 'raster',
+        source: 'osm',
+        layout: {
+          visibility: 'visible',
+        },
+      },
+    ],
+  },
+  geocode,
+  draw,
+} = Astro.props;
 ---
 
 <maplibre-astro
   data-latitude={latitude}
   data-longitude={longitude}
   data-zoom={zoom}
-  data-mapstyle={mapstyle}
   data-container={container}
-  data-interactive={interactive}
   data-containerstyle={containerstyle}
+  data-interactive={interactive}
+  data-mapstyle={JSON.stringify(mapstyle)}
+  data-geocode={geocode}
+  data-draw={draw}
 >
-<div id={container} style={containerstyle}></div>
+  <div id={container} style={containerstyle}></div>
 
 <script>
   import 'maplibre-gl/dist/maplibre-gl.css';
+  import '@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css';
   import maplibre from 'maplibre-gl';
+  import MaplibreGeocoder from '@maplibre/maplibre-gl-geocoder';
+  import { MapLibreGL as lib } from "maplibre-gl";
+  import { TerraDraw, TerraDrawMapLibreGLAdapter, TerraDrawPolygonMode } from "terra-draw";
 
   class MapLibreMap extends HTMLElement {
     constructor() {
-      super()
+      super();
+      this.map = null;
+      this.draw = null;
+      this.geocoder = null;
+    }
 
-      console.log(maplibre.Map)
-      const map = new maplibre.Map({
+    _initMap() {
+      this.map = new maplibre.Map({
         container: this.dataset.container,
         interactive: JSON.parse(this.dataset.interactive),
-        center: [this.dataset.longitude, this.dataset.latitude],
-        zoom: this.dataset.zoom,
-        style: this.dataset.mapstyle
-      })
+        center: [parseFloat(this.dataset.longitude), parseFloat(this.dataset.latitude)],
+        zoom: parseFloat(this.dataset.zoom),
+        style: JSON.parse(this.dataset.mapstyle) // Parse stringified JSON back to object
+      });
+    }
+
+    _initDraw() {
+      this.draw = new TerraDraw({
+        adapter: new TerraDrawMapLibreGLAdapter({ map: this.map, lib }),
+        modes: [new TerraDrawPolygonMode()],
+      });
+
+      this.draw.start();
+      this.draw.setMode("polygon");
+    }
+
+    _initGeocoder() {
+      const geocoderApi = {
+        forwardGeocode: async (config) => {
+          const features = [];
+          try {
+            const request = `https://nominatim.openstreetmap.org/search?q=${config.query}&format=geojson&polygon_geojson=1&addressdetails=1`;
+            const response = await fetch(request);
+            const geojson = await response.json();
+            
+            for (const feature of geojson.features) {
+              const center = [
+                feature.bbox[0] + (feature.bbox[2] - feature.bbox[0]) / 2,
+                feature.bbox[1] + (feature.bbox[3] - feature.bbox[1]) / 2
+              ];
+              const point = {
+                type: 'Feature',
+                geometry: { type: 'Point', coordinates: center },
+                place_name: feature.properties.display_name,
+                properties: feature.properties,
+                text: feature.properties.display_name,
+                place_type: ['place'],
+                center
+              };
+              features.push(point);
+            }
+          } catch (e) {
+            console.error(`Failed to forwardGeocode with error: ${e}`);
+          }
+          
+          return { features };
+        }
+      };
+      const geocoderControl = new MaplibreGeocoder(geocoderApi, { maplibregl: maplibre });
+      this.map.addControl(geocoderControl);
+    }
+
+    connectedCallback() {
+      this._initMap();
+
+      if (this.dataset.draw && JSON.parse(this.dataset.draw)) {
+        this._initDraw();
+      }
+
+      if (this.dataset.geocode && JSON.parse(this.dataset.geocode)) {
+        this._initGeocoder();
+      }
     }
   }
 

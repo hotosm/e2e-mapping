@@ -40,6 +40,17 @@ export default defineConfig({
 					},
 				},
 				{
+					label: '1. Base Imagery',
+					items: [
+						{ label: '1a) Drone TM', slug: '1-imagery/a-drone-tm' },
+						{ label: '1b) OpenAerialMap', slug: '1-imagery/b-oam' },
+					],
+					translations: {
+						fr: 'Placeholder',
+						es: 'Placeholder',
+					},
+				},
+				{
 					label: '2. Digitization',
 					items: [
 						{ label: '2a) Create Training Data', slug: '2-digitization/a-ml-training' },
