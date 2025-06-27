@@ -75,8 +75,8 @@ export default defineConfig({
           label: '3. Field Mapping',
           items: [
             {
-              label: '3a) Field Mapping Tasking Manager',
-              slug: '3-field-map/a-fmtm',
+              label: '3a) Field Tasking Manager',
+              slug: '3-field-map/a-field-tm',
             },
             {
               label: '3b) Merging Data With OSM',

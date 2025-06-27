@@ -9,7 +9,7 @@ description: Conflate with existing map data.
 - However, first we must check for conflicts in the geometries and tags.
 - Our conflation scripts can handle a lot of this, with some manual
   input where necessary.
-- This is built directly into the FMTM UI.
+- This is built directly into the Field-TM UI.
 - The final validated and tagged geometries are bulk uploaded to OSM.
 
   :::

@@ -27,6 +27,6 @@ description: Upload base imagery.
 
 - Once the imagery is processed, access the entry on OAM.
 - You should be provided with a TMS URL that you can use in the next
-  tools (Tasking Manager, FMTM).
+  tools (Tasking Manager, Field-TM).
 
 ## Extra Resources
