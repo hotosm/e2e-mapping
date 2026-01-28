@@ -26,6 +26,16 @@ hero:
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import './deprecation-banner.css';
+
+<div class="deprecation-banner" onclick="this.style.display='none'">
+  <div class="deprecation-content" onclick="event.stopPropagation()">
+    <h2>⚠️ This site is no longer updated.</h2>
+    <p>
+      Please visit <a href="https://portal.hotosm.org" target="_blank" rel="noopener noreferrer">https://portal.hotosm.org</a> instead.
+    </p>
+  </div>
+</div>
 
 ## Requirements
 

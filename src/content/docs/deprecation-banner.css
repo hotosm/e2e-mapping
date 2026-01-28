@@ -1,0 +1,83 @@
+.deprecation-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.deprecation-content {
+  background-color: #fff;
+  border: 4px solid #e63946;
+  border-radius: 12px;
+  padding: 2.5rem;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease-out;
+  cursor: default;
+  position: relative;
+}
+
+.deprecation-content h2 {
+  margin: 0 0 1rem 0;
+  color: #e63946;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.deprecation-content p {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.deprecation-content a {
+  color: #0066cc;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.deprecation-content a:hover {
+  color: #0052a3;
+}
+
+.close-hint {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .deprecation-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .deprecation-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .deprecation-content p {
+    font-size: 1.1rem;
+  }
+}
