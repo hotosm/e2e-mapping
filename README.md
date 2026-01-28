@@ -10,6 +10,7 @@ Docs for how to use HOT's tools in an End-to-End data mapping flow.
 >
 > The project has been superseded by:
 > <https://github.com/hotosm/portal>
+>
 > <https://portal.hotosm.org>
 
 ## Installing Components From Other Projects
