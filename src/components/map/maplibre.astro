@@ -125,7 +125,8 @@ const {
             const response = await fetch(request);
             const geojson = await response.json();
 
-            const features = geojson.features.map((feature: NominatimFeature) => {
+            // const features = geojson.features.map((feature: NominatimFeature) => {
+            const features = geojson.features.map((feature: any) => {
               const center = [
                 feature.bbox[0] + (feature.bbox[2] - feature.bbox[0]) / 2,
                 feature.bbox[1] + (feature.bbox[3] - feature.bbox[1]) / 2,
